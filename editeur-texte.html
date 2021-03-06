@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>editeur-texte</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		.container{
+			width: 100%;
+			height: 300px;
+			background-color: rgb(177,177,177);
+			position: absolute;
+		}
+		.pspan{
+			width: 20px;
+			height: 20px;
+			background-color: blue;
+			position: absolute;
+			top: 5px;
+			left: 1px;
+
+		}
+		.dspan{
+			width: 20px;
+			height: 20px;
+			background-color: red;
+			position: absolute;
+			top: 5px;
+			left: 30px;
+			
+		}
+		.tspan{
+			width: 20px;
+			height: 20px;
+			background-color: green;
+			position: absolute;
+			top: 5px;
+			left: 59px;
+			
+		}
+		.kspan{
+			width: 20px;
+			height: 20px;
+			background-color: white;
+			position: absolute;
+			top: 5px;
+			left: 88px;
+			
+		}
+		.maj{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 40px;
+			left: 40px;
+			background-color: rgb(222,222,222);
+			color: black;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		.min{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 40px;
+			left: 70px;
+			background-color: rgb(222,222,222);
+			color: black;
+			text-align: center;
+			text-transform: lowercase;
+		}
+		.cap{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 40px;
+			left: 100px;
+			background-color: rgb(222,222,222);
+			color: black;
+			text-align: center;
+			text-transform: capitalize;
+		}
+		.ls{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 70px;
+			left: 40px;
+			background-color: rgb(222,222,222);
+			color: black;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+		.ws{
+			width: 40px;
+			height: 20px;
+			position: absolute;
+			top: 70px;
+			left: 70px;
+			background-color: rgb(222,222,222);
+			color: black;
+			text-align: center;
+			text-transform: uppercase;
+			word-spacing: 1px;
+		}
+		.fw{
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 70px;
+			left: 120px;
+			background-color: rgb(222,222,222);
+			color: black;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.para{
+			width: 90%;
+			height: 100px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: rgb(111,111,111);
+			position: absolute;
+			top: 150px;
+			left: 5%;
+			text-indent: 10px;
+			text-align: justify;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<span class="pspan" id="pspan"></span>
+	<span class="dspan" id="dspan"></span>
+	<span class="tspan" id="tspan"></span>
+	<span class="kspan" id="kspan"></span>
+	<span class="maj" id="maj">a</span>
+	<span class="min" id="min">a</span>
+	<span class="cap" id="cap">ab</span>
+	<span class="ls" id="ls">ab</span>
+	<span class="ws" id="ws">ab a</span>
+	<span class="fw" id="fw">a</span>
+	
+	<input type="text" name="para" class="para" id="para">
+
+</div>
+<script type="text/javascript">
+	var pspan=document.getElementById("pspan");
+	var dspan=document.getElementById("dspan");
+	var tspan=document.getElementById("tspan");
+	var kspan=document.getElementById("kspan");
+	var maj=document.getElementById('maj');
+	var min=document.getElementById('min');
+	var cap=document.getElementById('cap');
+	var ls=document.getElementById('ls');
+	var ws=document.getElementById('ws');
+	var fw=document.getElementById('fw');
+	var para=document.getElementById('para');
+	pspan.addEventListener('click',transform);
+	function transform(){
+		para.style.color="blue";
+		para.style.backgroundColor="white";
+	}
+	dspan.addEventListener('click',transform1);
+	function transform1(){
+		para.style.color="red";
+		para.style.backgroundColor="white";
+	}
+	tspan.addEventListener('click',transform3);
+	function transform3(){
+		para.style.color="green";
+		para.style.backgroundColor="white";
+	}
+	kspan.addEventListener('click',transform4);
+	function transform4(){
+		para.style.color="white";
+		para.style.backgroundColor="black";
+	}
+	maj.addEventListener('click',transformmaj);
+	function transformmaj(){
+		para.style.textTransform="uppercase";
+	}
+	min.addEventListener('click',transformmin);
+	function transformmin(){
+		para.style.textTransform="lowercase";
+	}
+	cap.addEventListener('click',transformcap);
+	function transformcap(){
+		para.style.textTransform="capitalize";
+	}
+	ls.addEventListener('click',transformls);
+	function transformls(){
+		para.style.letterSpacing="1px";
+	}
+	ws.addEventListener('click',transformws);
+	function transformws(){
+		para.style.wordSpacing="1px";
+	}
+	fw.addEventListener('click',transformfw);
+	function transformfw(){
+		para.style.fontWeight="bold";
+	}
+</script>
+</body>
+</html>
